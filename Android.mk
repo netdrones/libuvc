@@ -1,6 +1,6 @@
 LOCAL_PATH := $(call my-dir)
 
-# libuvc.a
+# libuvc.so
 
 include $(CLEAR_VARS)
 
@@ -21,7 +21,8 @@ LOCAL_C_INCLUDES += \
 LOCAL_EXPORT_C_INCLUDES := \
     $(LOCAL_PATH)/include \
 
-LOCAL_SHARED_LIBRARIES := usb-1.0
+LOCAL_SHARED_LIBRARIES := \
+    usb-1.0 \
 
 LOCAL_CFLAGS = \
     -DLOG_NDEBUG \
@@ -37,4 +38,4 @@ LOCAL_ARM_MODE := arm
 
 LOCAL_MODULE := uvc
 
-include $(BUILD_STATIC_LIBRARY)
+include $(BUILD_SHARED_LIBRARY)
